@@ -13,7 +13,7 @@ $\text{\ \color{lightblue}\   Технологии:\}$
 4. Styled-components
 5. Node.js, express
 6. React-router-dom
-7. PostgresSQL
+7. PostgreSQL
 8. Socket.IO
 9. JWT
 ```
