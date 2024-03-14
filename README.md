@@ -15,5 +15,5 @@ $\text{\ \color{lightblue}\   Технологии:\}$
 6. React-router-dom
 7. PostgresSQL
 8. Socket.IO
-9. JSON Web Tokens
+9. JWT
 ```
