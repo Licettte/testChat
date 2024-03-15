@@ -12,8 +12,6 @@ import {
 } from "./datePickerStyle";
 import {dayNames, monthNames, monthNames1} from "./calendar";
 
-
-
  const DatePicker = ({value, setChooseDate}) => {
     const [day] = useState(value.getDate());
     const [currentMonth] = useState(value.getMonth());
@@ -173,4 +171,3 @@ import {dayNames, monthNames, monthNames1} from "./calendar";
     </Div>);
 };
 export default memo(DatePicker);
-

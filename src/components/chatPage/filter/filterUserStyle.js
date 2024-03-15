@@ -19,9 +19,6 @@ export const Label = styled.label`
     width: 130px;
     margin: 8px;
     ${FONT_MEDIUM_15}
-
-
-
     &:hover {
         background: rgba(153, 241, 213, 0.66);
     }

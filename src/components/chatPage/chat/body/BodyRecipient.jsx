@@ -6,7 +6,6 @@ import {
     MessageRecipient,
     NameRecipient,
 } from "./bodyStyle";
-
 export const BodyRecipient = ({element}) => {
     return (
         <ChatBody $direction='column' key={element.id}>

@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-
 export const SideBarContainer = styled.div`
     height: 60%;
     width: 28%;
@@ -19,10 +18,7 @@ export const ButtonFilter = styled.button`
     box-shadow: 0 4px 6px rgb(65 132 144 / 10%), 0 1px 3px rgb(0 0 0 / 8%); 
 `;
 
-
-export const ImgCookie = styled.img`
-  
+export const ImgCookie = styled.img`  
     width: 34%;
     height: 30%;
-
 `;

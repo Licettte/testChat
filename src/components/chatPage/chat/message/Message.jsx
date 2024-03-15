@@ -5,7 +5,6 @@ import {selectToken} from "../../../../store/slices/userSlice";
 import {socket} from "../../../../core/socket";
 import {getCurrentDate} from "../../../../calendar/currentDate";
 import {selectMessage, setMessage} from "../../../../store/slices/messageSlice";
-
 export const Message = () => {
 
     const dispatch = useAppDispatch();

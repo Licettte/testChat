@@ -2,7 +2,6 @@ import {ChatBody, ChatDate, MessageContent, MessageSender, NameSender} from "./b
 import {Flex} from "../../../../styles/Flex";
 import React, {useEffect, useState} from "react";
 import {Modal} from "../../../modal/Modal";
-
 export const BodySender = ({element, messages, setMessages}) => {
 
     const [isModalActive, setIsModalActive] = useState(false);

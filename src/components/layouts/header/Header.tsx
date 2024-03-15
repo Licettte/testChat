@@ -4,7 +4,6 @@ import {useAppDispatch, useAppSelector} from "../../../store/hooks";
 import {selectOrder, setIsAuth, setUserName} from "../../../store/slices/userSlice";
 import {useNavigate} from "react-router";
 
-
 export const Header = () => {
     const user = useAppSelector(selectOrder);
     const navigate = useNavigate();
@@ -20,4 +19,3 @@ export const Header = () => {
         </HeaderFlex>
     )
 }
-

@@ -1,6 +1,5 @@
 import {useNavigate} from "react-router-dom";
 import {useState} from "react";
-
 export const Home = ({socket}) => {
 
     const nav = useNavigate()

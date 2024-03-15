@@ -6,7 +6,6 @@ import {ChatFlex, Main} from "./chatPageStyle";
 import {socket} from "../../core/socket";
 import DatePicker from "../../calendar/DatePicker";
 import {Flex} from "../../styles/Flex";
-
 export const ChatPage = () => {
 
     const archiveMessages = [
@@ -57,7 +56,6 @@ export const ChatPage = () => {
     // }, [socket, messagesBD]);
 
     const [date, setDate] = useState(new Date());
-
 
     useEffect(() => {
         socket.on('responseTyping', (data) => setStatus(data))
