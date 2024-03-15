@@ -4,6 +4,7 @@ import styled from "styled-components";
 import {dekstop} from "../../../styles/variables";
 import {FlexStyle} from "../../../styles/Flex";
 import {FONT_REGULAR_20} from "../../../styles/fonts";
+import {tablet} from "../../../styles/variables"
 
 export const HeaderFlex = styled(FlexStyle)`   
     margin: auto;
@@ -13,6 +14,11 @@ export const HeaderFlex = styled(FlexStyle)`
     padding: 15px;
 `;
 
-export const Button = styled.button`      
-    color: ${BACKGROUND_COLOR};     
+export const Button = styled.button`
+    @media (max-width: ${tablet}) {
+        //max-width: 560px;
+        margin: 0 20px;
+    }
+    color: ${BACKGROUND_COLOR};
+  
 `;

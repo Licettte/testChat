@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, memo} from 'react';
 import {
     SevenColomnGrid,
     CurrentMonth,
@@ -8,12 +8,13 @@ import {
     Button,
     PeriodText,
     DateText,
-    CalendarContainer, Div, Header, CountText, Period,
-} from "./datePeckerStyle";
+    CalendarContainer, Div, Header, Period,
+} from "./datePickerStyle";
 import {dayNames, monthNames, monthNames1} from "./calendar";
 
 
-export const DatePicker = ({value, setChooseDate}) => {
+
+ const DatePicker = ({value, setChooseDate}) => {
     const [day] = useState(value.getDate());
     const [currentMonth] = useState(value.getMonth());
     const [month, setMonth] = useState(value.getMonth());
@@ -25,7 +26,6 @@ export const DatePicker = ({value, setChooseDate}) => {
     const [selectedMonth, setSelectedMonth] = useState([]);
     const [selectedYear, setSelectedYear] = useState([]);
 
-    // const [chooseDate, setChooseDate] = useState('');
 
     useEffect(() => {
         createDaysArray();
@@ -82,7 +82,7 @@ export const DatePicker = ({value, setChooseDate}) => {
         let month;
         eventDay.length == 1 ? day = `0${eventDay}` : day = `${eventDay}`
         eventMonth.length == 1 ? month = `0${eventMonth}` : month = `${eventMonth}`
-        setChooseDate((prevArray) => [...prevArray, `${eventYear}-${month}-${day}`].slice(0, 2))
+        setChooseDate((prevArray) => [...prevArray, `${eventYear}-${(month)}-${day}`].slice(0, 2))
 
         if (selectedIdDay.length != 1) {
             setSelectedIdDay((prevArray) => [...prevArray, eventSplit[0]]);
@@ -119,7 +119,6 @@ export const DatePicker = ({value, setChooseDate}) => {
         }
     };
 
-    // setChooseDate({selectedYear}-{selectedMonth}-{selectedDay})
     return (<Div>
         <Header>
             <OtherMonth onClick={prevMonth}>
@@ -173,3 +172,5 @@ export const DatePicker = ({value, setChooseDate}) => {
         </CalendarContainer>
     </Div>);
 };
+export default memo(DatePicker);
+

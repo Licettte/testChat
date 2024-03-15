@@ -7,13 +7,11 @@ import React from "react";
 import coockie from "../../../img/coockie.png";
 import {ImgCookie} from "../sideBar/sideBarStyle";
 
-
 export const ChatUser = () => {
     const token = useAppSelector(selectToken);
     // @ts-ignore
     const currentUserName = token[2];
-    // @ts-ignore
-    const mail = token[1];
+
     return (
         <Div $direction='column' $align="center">
             <h4>{currentUserName}</h4>

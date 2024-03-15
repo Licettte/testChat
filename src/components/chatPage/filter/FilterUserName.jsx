@@ -18,18 +18,15 @@ const FilterUserName = ({messages, setFilterName}) => {
         }
     }, [recipient]);
 
-
     function changeValue(event) {
         setFilterName(event.target.value);
         setValue(event.target.value);
-
     }
 
     return (
 
         <Flex $align='center' $direction='column'>
             <h3 style={{color: "#878383"}}> фильтр по имени:</h3>
-
             <FormRadioBtn>
                 <InputRadio
                     type="radio"

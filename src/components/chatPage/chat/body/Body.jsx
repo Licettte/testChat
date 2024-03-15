@@ -7,39 +7,41 @@ import React, {useEffect, useState} from "react";
 import {BodySender} from "./BodySender";
 import {BodyRecipient} from "./BodyRecipient";
 import {filteredData} from "../../filter/FilterUserDate";
+import {login} from "../../../../store/service/login";
 
-export const Body = ({messages, status, filterName, chooseDate}) => {
+export const Body = ({messages, status, filterName, chooseDate, setMessages}) => {
     const token = useAppSelector(selectToken);
     const userName = token[2];
-    const [isFilter, setIsFilter] = useState(true);
-    const [messagesFilter, setMessagesFilter] = useState([]);
+    const [isFilter, setIsFilter] = useState(false);
+    const [messagesFilter, setMessagesFilter] = useState(() => [...messages]);
 
+    const [chooseDate1, setchooseDate1] = useState();
 
     useEffect(() => {
-        setIsFilter(true)
+        if(chooseDate.length===1){
+            setIsFilter(true)
+        }
+
     }, [chooseDate]);
 
     useEffect(() => {
-        const start = String(chooseDate[0]);
+        const start = chooseDate[0];
         const end = chooseDate[1];
-        // isFilter ? setMessagesFilter( () => [...filteredData(messages, '2024-01-01', '2024-03-16')])
-        isFilter ? setMessagesFilter(() => [...filteredData(messages, start, end)])
-            : setMessagesFilter(() => [...messages])
-    }, [chooseDate, isFilter, messages]);
+        isFilter ?     setMessagesFilter(() => [...filteredData(messages, start, end)]):
+            setMessagesFilter(() => [...messages])
 
-    console.log(messages, "messages")
-    console.log(messagesFilter, "messagesFilter")
+
+
+
+    }, [chooseDate, messages]);
 
     return (<Container>
         {messagesFilter.map(element => element.name === userName ?
-            <span style={{display: filterName == 'Dima' ? "none" : "block"}}>
-                <BodySender element={element} key={element.id}/>
-                </span>
-            :
-            <span style={{display: filterName == 'Alice' ? "none" : "block"}}>
-                <BodyRecipient element={element} key={element.id}/>
-                </span>)
-        }
+            <span style={{display: filterName === 'Dima' ? "none" : "block"}} key={element.id}>
+                <BodySender element={element} messages={messages} setMessages={setMessages}/>
+                </span> : <span style={{display: filterName == 'Alice' ? "none" : "block"}} key={element.id}>
+                <BodyRecipient element={element}/>
+                </span>)}
 
         <ChatStatus> {status}</ChatStatus>
     </Container>)

@@ -8,11 +8,7 @@ export const Container = styled.div`
     position: sticky;
     height: 70vh;
     padding: 20px;
-    //overflow-y: scroll;
-
-
     overflow-y: auto;
-    //position: relative;
 
     &::-webkit-scrollbar {
         width: 18px;
@@ -60,7 +56,6 @@ export const MessageRecipient = styled(FlexStyle)`
 `;
 
 export const MessageSender = styled(FlexStyle)`
-;
     background-color: #cbc8e299;
     width: 300px;
     padding: 10px;
@@ -72,7 +67,6 @@ export const MessageContent = styled(FlexStyle)`
     width: 100%;
 `;
 
-
 export const ChatDate = styled(FlexStyle)`
     display: flex;
     padding: 0 8px;
@@ -81,11 +75,10 @@ export const ChatDate = styled(FlexStyle)`
 export const ChatStatus = styled(FlexStyle)`
     position: fixed;
     ${FONT_REGULAR_20};
-    bottom: 130px;
+    bottom: 110px;
 `;
 
 export const NameKira = styled(FlexStyle)`
-;
     background-color: rgb(30 249 173 / 24%);;
     width: 300px;
     padding: 10px;
@@ -94,6 +87,5 @@ export const NameKira = styled(FlexStyle)`
 `;
 
 export const HeaderBody = styled.div`
-
 `;
 
