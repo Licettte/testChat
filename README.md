@@ -1,3 +1,5 @@
+полная версия - https://github.com/Licettte/TestChatFullVersion/tree/main/relex
+
 
 $\Large\text{\ \color{lightblue}\ Chat}$
 ____
