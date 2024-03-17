@@ -1,5 +1,3 @@
-...in progress
-____
 backend - [https://github.com/Licettte/TestChatFullVersion/tree/main/relex](https://github.com/Licettte/TestChatFullVersion/tree/main/relex/server)](https://github.com/Licettte/TestChatFullVersion/tree/main/relex/server)
 
 
