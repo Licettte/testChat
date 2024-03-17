@@ -1,7 +1,7 @@
 import {createSlice} from "@reduxjs/toolkit";
 import {RootState} from "../store";
 import {createMessage, fetchMessages} from "../service/messageService";
-import {MessageState} from '../../types/types'
+import {MessageState} from '../../utils/type/types'
 
 const initialState: MessageState = {
     id: '',

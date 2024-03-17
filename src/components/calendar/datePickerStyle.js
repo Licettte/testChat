@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {DARK_PRIMARY_COLOR} from "../styles/colors";
+import {DARK_PRIMARY_COLOR} from "../../styles/colors";
 
 export const Div = styled.div`
     width: 777px;

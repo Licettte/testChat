@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {FlexChildren, FlexType} from "../types/types";
+import {FlexChildren, FlexType} from "../utils/type/types";
 export const FlexStyle = styled.div<FlexType>`
     display: flex;
     flex-direction: ${props => props.$direction || 'row'};

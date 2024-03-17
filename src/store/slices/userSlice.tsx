@@ -1,7 +1,7 @@
 import {createAsyncThunk, createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {RootState} from "../store";
 import {registration} from "../service/registration";
-import {UserState} from "../../types/types";
+import {UserState} from "../../utils/type/types";
 import {login} from "../service/login";
 import {fetchUsers} from "../service/fetchUser";
 import {jwtDecode} from "jwt-decode";
@@ -14,7 +14,7 @@ const initialState: UserState = {
     auth: false,
     token: [],
     users: [],
-    message:'',
+    message: '',
 };
 
 export const userSlice = createSlice({
@@ -46,7 +46,7 @@ export const userSlice = createSlice({
             })
             .addCase(registration.fulfilled, (state, action) => {
                 state.status = 'finished';
-               state.message='Вы успешно зарегистрировались';
+                state.message = 'Вы успешно зарегистрировались';
                 state.name = '';
                 state.email = '';
                 state.password = '';
@@ -66,7 +66,7 @@ export const userSlice = createSlice({
                     const decoded = jwtDecode(Object.values(action.payload)[0]);
                     // @ts-ignore
                     state.token = Object.values(decoded);
-                                 }
+                }
 
             }).addCase(fetchUsers.fulfilled, (state, action) => {
             state.status = 'finished';

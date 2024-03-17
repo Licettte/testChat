@@ -47,8 +47,8 @@ export type UserState = {
     password: string,
     status: 'idle' | 'loading' | 'finished' | 'error';
     auth: boolean,
-    token: [];
-    users: [];
+    token: string[];
+    users:  User[];
     message:string
 }
 
@@ -56,7 +56,7 @@ export type MessageState = {
     id: string,
     text: string,
     message: string,
-    messages:[],
+    messages: Messages[],
     name: string,
     datetime: string
     status: 'idle' | 'loading' | 'finished' | 'error';

@@ -3,7 +3,7 @@ import {Button, FormSend, InputMessage} from "./messageStyle";
 import {useAppDispatch, useAppSelector} from "../../../../store/hooks";
 import {selectToken} from "../../../../store/slices/userSlice";
 import {socket} from "../../../../core/socket";
-import {getCurrentDate} from "../../../../calendar/currentDate";
+import {getCurrentDate} from "../../../calendar/currentDate";
 import {selectMessage, setMessage} from "../../../../store/slices/messageSlice";
 export const Message = () => {
 

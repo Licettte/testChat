@@ -1,15 +1,14 @@
-import {useAppSelector} from "../../../store/hooks";
+import {useAppSelector} from "../../../store";
 import {selectToken} from "../../../store/slices/userSlice";
 import avatar from "../../../img/avatar.png"
 import {Div, Img} from "./chatUserStyle";
 import {Flex} from "../../../styles/Flex";
 import React from "react";
-import coockie from "../../../img/coockie.png";
+import coockie from '../../../img/coockie.png';
 import {ImgCookie} from "../sideBar/sideBarStyle";
 
 export const ChatUser = () => {
     const token = useAppSelector(selectToken);
-    // @ts-ignore
     const currentUserName = token[2];
 
     return (

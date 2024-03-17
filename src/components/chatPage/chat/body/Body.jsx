@@ -18,7 +18,6 @@ export const Body = ({messages, status, filterName, chooseDate, setMessages}) =>
         if(chooseDate.length===1){
             setIsFilter(true)
         }
-
     }, [chooseDate]);
 
     useEffect(() => {

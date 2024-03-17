@@ -1,8 +1,8 @@
 import React, {memo, useCallback, useState} from "react";
-import {EntryFormType} from "../../types/types";
+import {EntryFormType} from "../../utils";
 import {Link, useLocation} from "react-router-dom";
 import {Button, Div, EntryFormContainer, Form, Input, Span} from "./entryFormStyle";
-import {useAppDispatch, useAppSelector} from "../../store/hooks";
+import {useAppDispatch, useAppSelector} from "../../store";
 import {selectOrder, setUserEmail, setUserName, setUserPassword,} from "../../store/slices/userSlice";
 import {useForm} from "react-hook-form";
 
