@@ -1,9 +1,10 @@
 ...in progress
-полная версия - https://github.com/Licettte/TestChatFullVersion/tree/main/relex
+____
+backend - https://github.com/Licettte/TestChatFullVersion/tree/main/relex
 
 
 $\Large\text{\ \color{lightblue}\ Chat}$
-____
+
 
 ____
 
