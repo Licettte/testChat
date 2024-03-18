@@ -1,10 +1,5 @@
 backend - [https://github.com/Licettte/TestChatFullVersion/tree/main/relex](https://github.com/Licettte/TestChatFullVersion/tree/main/relex/server)](https://github.com/Licettte/TestChatFullVersion/tree/main/relex/server)
 ____
-
-![image](https://github.com/Licettte/testChat/assets/80988747/c3dcbbb1-1947-4dce-84d1-cd117a4f785a)
-![image](https://github.com/Licettte/testChat/assets/80988747/81934001-9df5-462b-9e05-04075714c8eb)
-
-
 $\Large\text{\ \color{lightblue}\ Chat}$
 ____
 
@@ -21,3 +16,9 @@ $\text{\ \color{lightblue}\   Технологии:\}$
 8. Socket.IO
 9. JWT
 ```
+
+
+![image](https://github.com/Licettte/testChat/assets/80988747/c3dcbbb1-1947-4dce-84d1-cd117a4f785a)
+![image](https://github.com/Licettte/testChat/assets/80988747/81934001-9df5-462b-9e05-04075714c8eb)
+
+
