@@ -27,6 +27,8 @@ export const Body = ({messages, status, filterName, chooseDate, setMessages}) =>
             setMessagesFilter(() => [...messages])
     }, [chooseDate, messages]);
 
+    console.log(userName, "userName")
+
     return (<Container>
         {messagesFilter.map(element => element.name === userName ?
             <span style={{display: filterName === 'Dima' ? "none" : "block"}} key={element.id}>

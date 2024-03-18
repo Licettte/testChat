@@ -34,7 +34,7 @@ export type  User = {
     id?: any
 };
 
-export type Messages = {
+export type Message = {
     id: string,
     text: string,
     name: string,
@@ -48,15 +48,17 @@ export type UserState = {
     status: 'idle' | 'loading' | 'finished' | 'error';
     auth: boolean,
     token: string[];
-    users:  User[];
-    message:string
+    users: User[];
+    message:string,
+    errorMessage: string,
+    usersList: User[];
 }
 
 export type MessageState = {
     id: string,
     text: string,
     message: string,
-    messages: Messages[],
+    messages: Message[],
     name: string,
     datetime: string
     status: 'idle' | 'loading' | 'finished' | 'error';

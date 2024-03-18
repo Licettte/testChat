@@ -9,7 +9,6 @@ export const Header = () => {
     const navigate = useNavigate();
     const dispatch = useAppDispatch()
     const handleLogout = () => {
-        localStorage.removeItem('user')
         dispatch(setIsAuth(false))
         navigate("/")
     }

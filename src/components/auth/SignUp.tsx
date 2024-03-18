@@ -9,7 +9,6 @@ import {BRIGHT_PRIMARY_COLOR} from "../../styles/colors";
 
 export const SignUp = () => {
     const dispatch = useAppDispatch();
-    const navigate = useNavigate();
     const user = useAppSelector(selectOrder);
 
     const handleRegister = useCallback((email: string, password: string, name: string,) => {
@@ -18,6 +17,7 @@ export const SignUp = () => {
 
     return (
         <>
+            {/*{user.errorMessage}*/}
             <h2>Регистрация</h2>
             <EntryForm title="Зарегистрироваться" handleClick={handleRegister}/>
 

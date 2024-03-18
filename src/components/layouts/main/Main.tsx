@@ -10,7 +10,7 @@ export const Main = () => {
     useEffect(() => {
         return user.auth ?
             navigate("/profile")
-            : navigate("/register")
+            : navigate("/login")
     }, [user.auth]);
 
     return (

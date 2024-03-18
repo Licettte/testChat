@@ -138,6 +138,7 @@ import {dayNames, monthNames, monthNames1} from "./calendar";
             <SevenColomnGrid>
                 {dayNames.map((day) => (<DayOfWeek
                     sel={day === 'вс' || day === 'сб' ? 'sel' : ''}
+                    key={day.id}
                 >
                     {day}
                 </DayOfWeek>))}

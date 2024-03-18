@@ -1,7 +1,7 @@
 import {createAsyncThunk, createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {RootState} from "../store";
 import {registration} from "../service/registration";
-import {UserState} from "../../utils/type/types";
+import {User, UserState} from "../../utils/type/types";
 import {login} from "../service/login";
 import {fetchUsers} from "../service/fetchUser";
 import {jwtDecode} from "jwt-decode";
@@ -15,6 +15,8 @@ const initialState: UserState = {
     token: [],
     users: [],
     message: '',
+    errorMessage: '',
+    usersList: []
 };
 
 export const userSlice = createSlice({
@@ -23,6 +25,13 @@ export const userSlice = createSlice({
     initialState,
 
     reducers: {
+        createUser: (state, action) => {
+            state.usersList.push(action.payload)
+            console.log(state.usersList, "state.usersList")
+        },
+        setErrorMessage: (state, action) => {
+            state.errorMessage = action.payload;
+        },
         setUserName: (state, action) => {
             state.name = action.payload;
         },
@@ -42,6 +51,7 @@ export const userSlice = createSlice({
                 state.status = 'loading';
             })
             .addCase(registration.rejected, (state) => {
+                state.auth = false;
                 state.status = 'error';
             })
             .addCase(registration.fulfilled, (state, action) => {
@@ -50,17 +60,18 @@ export const userSlice = createSlice({
                 state.name = '';
                 state.email = '';
                 state.password = '';
+
             })
             .addCase(login.pending, (state) => {
                 state.status = 'loading';
             })
-            .addCase(login.rejected, (state) => {
+            .addCase(login.rejected, (state, action) => {
                 state.status = 'error';
+                state.auth = false;
+                console.log(state.auth, "state.auth")
             })
             .addCase(login.fulfilled, (state, action) => {
                 state.status = 'finished';
-                state.auth = true;
-
                 if (action.payload) {
                     // @ts-ignore
                     const decoded = jwtDecode(Object.values(action.payload)[0]);
@@ -76,7 +87,7 @@ export const userSlice = createSlice({
 });
 
 
-export const {setUserName, setUserEmail, setUserPassword, setIsAuth} = userSlice.actions;
+export const {setUserName, setUserEmail, setUserPassword, setIsAuth, createUser, setErrorMessage} = userSlice.actions;
 export const selectOrder = (state: RootState) => state.user;
 
 export const selectToken = (state: RootState) => state.user.token;
