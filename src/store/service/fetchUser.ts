@@ -7,12 +7,7 @@ import {setErrorMessage} from "../slices/userSlice";
 export const fetchUsers = createAsyncThunk<any, UserType>
 ('user/getUser',
     async (_, {dispatch}) => {
-        return axios.get(URL_USERS, {
-            headers: {
-                'Access-Control-Allow-Origin': '*',
-                'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS'
-            }
-        })
+        return axios.get(URL_USERS,)
             .then((response) => {
                 return response.data;
             })
