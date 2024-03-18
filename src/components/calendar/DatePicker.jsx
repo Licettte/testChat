@@ -11,7 +11,6 @@ import {
     CalendarContainer, Div, Header, Period,
 } from "./datePickerStyle";
 import {dayNames, monthNames, monthNames1} from "./calendar";
-import {DatePickerType} from "../../utils/type/DatePickerType";
 
  const DatePicker = ({value, setChooseDate}) => {
     const [day] = useState(value.getDate());
