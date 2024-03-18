@@ -1,4 +1,6 @@
+import {MessageType} from "./types";
+
 export  type ModalPropsType = {
-    setIsEditText: (value: string) => void,
-    setIsModalActive: (value: boolean) => void,
+    setIsEditText: React.Dispatch<React.SetStateAction<string>>
+    setIsModalActive: React.Dispatch<React.SetStateAction<boolean>>
 }

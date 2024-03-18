@@ -4,5 +4,5 @@ export  type BodyType = {
     messages: MessageType[], status:string,
     filterName:string,
     chooseDate:string,
-    setMessages:((setCallback: (prevState: MessageType[]) => MessageType[]) => void);
+    setMessages:React.Dispatch<React.SetStateAction<MessageType[]>>;
 }

@@ -7,10 +7,6 @@ export  type ElementType = {
     dateForUser: string,
     data: string
 }
-function displayData(data: number | string) {
-    console.log(data);
-}
-
 
 export  type BodySenderType = {
     element: {
@@ -21,8 +17,5 @@ export  type BodySenderType = {
         data: string
     },
     messages: MessageType[],
-    setMessages:
-        (setCallback: (prevState: MessageType[]) => MessageType[]) => void
-        |
-        ((value: MessageType[]) => void),
+    setMessages: React.Dispatch<React.SetStateAction<MessageType[]>>
 }

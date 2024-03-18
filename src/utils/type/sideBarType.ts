@@ -2,5 +2,5 @@ import {MessageType} from "./types";
 
 export type SideBarType = {
     messages: MessageType[],
-    setFilterName: (value: string) => void,
+    setFilterName: React.Dispatch<React.SetStateAction<string>>
 }

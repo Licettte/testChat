@@ -26,7 +26,6 @@ export const BodySender = ({element, messages, setMessages}: BodySenderType) => 
         const deleteMessage = (el: ElementType) => {
             console.log(el)
             const filteredMessage = messages.filter(element => element.id !== el.id);
-            // @ts-ignore
             setMessages(filteredMessage)
         };
 
