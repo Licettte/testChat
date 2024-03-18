@@ -3,9 +3,11 @@ ____
 ..in the process of adding TS
 ____
 
+![image](https://github.com/Licettte/testChat/assets/80988747/c3dcbbb1-1947-4dce-84d1-cd117a4f785a)
+![image](https://github.com/Licettte/testChat/assets/80988747/81934001-9df5-462b-9e05-04075714c8eb)
+
+
 $\Large\text{\ \color{lightblue}\ Chat}$
-
-
 ____
 
 $\text{\ \color{lightblue}\   Технологии:\}$  
