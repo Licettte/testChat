@@ -1,10 +1,9 @@
 import React, {useEffect, useMemo, useState} from 'react';
 import {Flex} from "../../../styles/Flex";
-import {useAppSelector} from "../../../store/hooks";
+import {useAppSelector} from "../../../store";
 import {selectToken} from "../../../store/slices/userSlice";
 import {FormRadioBtn, InputRadio, Label} from "./filterUserStyle";
-import {MessageType} from "../../../utils";
-import {FilterUserNamePropsType} from "../../../utils/type/FilterUserNameType";
+import {MessageType, FilterUserNamePropsType} from "../../../utils";
 
 const FilterUserName = ({messages, setFilterName}:FilterUserNamePropsType) => {
     const token = useAppSelector(selectToken);

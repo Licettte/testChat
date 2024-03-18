@@ -1,12 +1,12 @@
 
 import {Route, Routes} from "react-router";
-import {PageRoutes} from "../../utils/constant/routes";
+import {PageRoutes} from "../../utils";
 import {Layout} from "../layouts/layout/Layout";
 import {Main} from "../layouts/main/Main";
 import {ChatPage} from "../chatPage/ChatPage";
 import {SignUp} from "../auth/SignUp";
 import {SignIn} from "../auth/SignIn";
-import React, { FC } from "react";
+import React from "react";
 export const Router = () => {
     return (
         <Routes>

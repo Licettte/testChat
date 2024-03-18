@@ -2,11 +2,11 @@ import React, {useEffect, useState} from "react";
 import {useNavigate} from "react-router";
 import {MainFlex} from "./mainStyle";
 import {useAppSelector} from "../../../store/hooks";
-import {selectOrder} from "../../../store/slices/userSlice";
+import {selectUser} from "../../../store/slices/userSlice";
 
 export const Main = () => {
     const navigate = useNavigate();
-    const user = useAppSelector(selectOrder);
+    const user = useAppSelector(selectUser);
     useEffect(() => {
         return user.auth ?
             navigate("/profile")

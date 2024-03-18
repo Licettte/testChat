@@ -2,8 +2,7 @@ import React from "react";
 import { SideBarContainer} from "./sideBarStyle";
 import {ChatUser} from "../chatUser/chatUser";
 import FilterUserName from "../filter/FilterUserName";
-import {ModalPropsType} from "../../../utils/type/ModalType";
-import {SideBarType} from "../../../utils/type/SideBarType";
+import {SideBarType} from "../../../utils";
 
 export const SideBar = ({messages, setFilterName}:SideBarType) => {
     return (

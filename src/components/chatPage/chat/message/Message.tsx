@@ -1,6 +1,6 @@
 import React from "react";
 import {Button, FormSend, InputMessage} from "./messageStyle";
-import {useAppDispatch, useAppSelector} from "../../../../store/hooks";
+import {useAppDispatch, useAppSelector} from "../../../../store";
 import {selectToken} from "../../../../store/slices/userSlice";
 import {socket} from "../../../../core/socket";
 import {getCurrentDate} from "../../../calendar/currentDate";

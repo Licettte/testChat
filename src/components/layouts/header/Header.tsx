@@ -1,11 +1,11 @@
 import React, {useEffect} from "react";
 import {Button, HeaderFlex} from "./headerStyle";
-import {useAppDispatch, useAppSelector} from "../../../store/hooks";
-import {selectOrder, setIsAuth, setUserName} from "../../../store/slices/userSlice";
+import {useAppDispatch, useAppSelector} from "../../../store";
+import {selectUser, setIsAuth} from "../../../store/slices/userSlice";
 import {useNavigate} from "react-router";
 
 export const Header = () => {
-    const user = useAppSelector(selectOrder);
+    const user = useAppSelector(selectUser);
     const navigate = useNavigate();
     const dispatch = useAppDispatch()
     const handleLogout = () => {

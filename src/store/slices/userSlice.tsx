@@ -1,7 +1,7 @@
-import {createSlice} from "@reduxjs/toolkit";
+import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {RootState} from "../store";
 import {registration} from "../service/registration";
-import { UserState} from "../../utils/type/types";
+import {UserState} from "../../utils/type/types";
 import {login} from "../service/login";
 import {fetchUsers} from "../service/fetchUser";
 import {jwtDecode} from "jwt-decode";
@@ -25,23 +25,23 @@ export const userSlice = createSlice({
     initialState,
 
     reducers: {
-        createUser: (state, action) => {
+        createUser: (state, action: PayloadAction<UserState>) => {
             state.usersList.push(action.payload)
             console.log(state.usersList, "state.usersList")
         },
-        setErrorMessage: (state, action) => {
+        setErrorMessage: (state, action: PayloadAction<string>) => {
             state.errorMessage = action.payload;
         },
-        setUserName: (state, action) => {
+        setUserName: (state, action: PayloadAction<string>) => {
             state.name = action.payload;
         },
-        setUserEmail: (state, action) => {
+        setUserEmail: (state, action: PayloadAction<string>) => {
             state.email = action.payload;
         },
-        setUserPassword: (state, action) => {
+        setUserPassword: (state, action: PayloadAction<string>) => {
             state.password = action.payload;
         },
-        setIsAuth: (state, action) => {
+        setIsAuth: (state, action: PayloadAction<boolean>) => {
             state.auth = action.payload;
         },
     },
@@ -70,15 +70,13 @@ export const userSlice = createSlice({
                 state.auth = false;
                 console.log(state.auth, "state.auth")
             })
-            .addCase(login.fulfilled, (state, action) => {
+            .addCase(login.fulfilled, (state, action: PayloadAction<string>) => {
                 state.status = 'finished';
                 if (action.payload) {
-                    // @ts-ignore
                     const decoded = jwtDecode(Object.values(action.payload)[0]);
-                    // @ts-ignore
                     state.token = Object.values(decoded);
                 }
-            }).addCase(fetchUsers.fulfilled, (state, action) => {
+            }).addCase(fetchUsers.fulfilled, (state, action:PayloadAction<UserState[]>) => {
             state.status = 'finished';
             state.users = action.payload
         });
@@ -86,7 +84,7 @@ export const userSlice = createSlice({
 });
 
 export const {setUserName, setUserEmail, setUserPassword, setIsAuth, createUser, setErrorMessage} = userSlice.actions;
-export const selectOrder = (state: RootState) => state.user;
+export const selectUser = (state: RootState) => state.user;
 
 export const selectToken = (state: RootState) => state.user.token;
 

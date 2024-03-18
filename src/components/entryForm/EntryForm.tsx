@@ -1,16 +1,16 @@
-import React, {memo, useCallback, useState} from "react";
+import React, {memo, useCallback} from "react";
 import {EntryFormType} from "../../utils";
-import {Link, useLocation} from "react-router-dom";
-import {Button, Div, EntryFormContainer, Form, Input, Span} from "./entryFormStyle";
+import {useLocation} from "react-router-dom";
+import {Button,  EntryFormContainer, Form, Input, Span} from "./entryFormStyle";
 import {useAppDispatch, useAppSelector} from "../../store";
-import {selectOrder, setUserEmail, setUserName, setUserPassword,} from "../../store/slices/userSlice";
+import {selectUser, setUserEmail, setUserName, setUserPassword,} from "../../store/slices/userSlice";
 import {useForm} from "react-hook-form";
 
 export const EntryForm = memo(({title, handleClick}: EntryFormType) => {
 
     const path = useLocation();
     const dispatch = useAppDispatch()
-    const user = useAppSelector(selectOrder);
+    const user = useAppSelector(selectUser);
 
     const {
         register,

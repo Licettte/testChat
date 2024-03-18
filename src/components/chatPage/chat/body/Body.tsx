@@ -1,14 +1,14 @@
 import {
     ChatStatus, Container,
 } from "./bodyStyle";
-import {useAppSelector} from "../../../../store/hooks";
+import {useAppSelector} from "../../../../store";
 import {selectToken,} from "../../../../store/slices/userSlice";
 import React, {useEffect, useState} from "react";
 import {BodySender} from "./BodySender";
 import {BodyRecipient} from "./BodyRecipient";
 import {filteredData} from "../../filter/FilterUserDate";
-import {BodyType} from "../../../../utils/type/BodyType";
-import {MessageType} from "../../../../utils";
+import {BodyType, MessageType} from "../../../../utils";
+
 
 export const Body = ({messages, status, filterName, chooseDate, setMessages}:BodyType) => {
     const token = useAppSelector(selectToken);

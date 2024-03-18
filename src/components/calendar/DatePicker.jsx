@@ -11,6 +11,7 @@ import {
     CalendarContainer, Div, Header, Period,
 } from "./datePickerStyle";
 import {dayNames, monthNames, monthNames1} from "./calendar";
+import {DatePickerType} from "../../utils/type/DatePickerType";
 
  const DatePicker = ({value, setChooseDate}) => {
     const [day] = useState(value.getDate());
@@ -31,7 +32,7 @@ import {dayNames, monthNames, monthNames1} from "./calendar";
 
 
     const createDaysArray = () => {
-        const data = getLowerMonday(month);
+        const data = getLowerMonday();
         const daysnextMonth = [];
         for (let i = 0; i < 42; i++) {
             data.setDate(data.getDate() + 1);

@@ -1,14 +1,14 @@
 import {EntryForm} from "../entryForm/EntryForm";
-import React, {useCallback, useEffect, useState} from "react";
-import {useAppDispatch, useAppSelector} from "../../store/hooks";
+import React, {useCallback, useEffect} from "react";
+import {useAppDispatch, useAppSelector} from "../../store";
 import {useNavigate} from "react-router";
 import {login} from "../../store/service/login";
-import {selectOrder} from "../../store/slices/userSlice";
-import {AuthLink, Div, Span,} from "./authStyle";
+import {selectUser} from "../../store/slices/userSlice";
+import {AuthLink, Div,} from "./authStyle";
 
 export const SignIn = () => {
     const dispatch = useAppDispatch();
-    const user = useAppSelector(selectOrder);
+    const user = useAppSelector(selectUser);
     const navigate = useNavigate();
 
     useEffect(() => {

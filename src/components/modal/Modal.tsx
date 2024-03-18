@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {ButtonModal, InputModal, WrapperModal, FormModal} from "./ModaleStyle";
-import {ModalPropsType} from "../../utils/type/ModalType";
+import {ModalPropsType} from "../../utils";
 export const Modal = ({setIsEditText, setIsModalActive}: ModalPropsType) => {
 
     const [text, setText] = useState('');

@@ -1,6 +1,6 @@
 import React from "react";
 import {Outlet} from "react-router-dom";
-import {Bottom, Container, Content, Top} from "./layoutStyle";
+import {Container, Content, Top} from "./layoutStyle";
 import {Header} from "../header/Header";
 
 export const Layout = () => {

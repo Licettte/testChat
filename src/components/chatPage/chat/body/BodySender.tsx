@@ -2,8 +2,8 @@ import {ChatBody, ChatDate, MessageContent, MessageSender, NameSender} from "./b
 import {Flex} from "../../../../styles/Flex";
 import React, {useEffect, useState} from "react";
 import {Modal} from "../../../modal/Modal";
-import {BodySenderType, ElementType} from "../../../../utils/type/BodySenderType";
-import {MessageType} from "../../../../utils";
+import {BodySenderType, ElementType} from "../../../../utils";
+
 
 export const BodySender = ({element, messages, setMessages}: BodySenderType) => {
 
