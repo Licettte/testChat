@@ -8,8 +8,7 @@ export const registration = createAsyncThunk<UserType, UserType>
 ('user/register',
     async ({email, password, name}, {dispatch}) => {
         return axios.post(URL_REGISTRATION, {email: email, password: password, name: name})
-            .then((response) => {
-                const dispatch = useAppDispatch();
+            .then((response) => {                
                 return dispatch(createUser(response.data));
                 return response.data;
             })
