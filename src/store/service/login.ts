@@ -1,9 +1,9 @@
 import {createAsyncThunk} from '@reduxjs/toolkit';
 import axios from "axios";
-import {URl_LOGIN, User} from "../../utils";
+import {URl_LOGIN, UserType} from "../../utils";
 import {setErrorMessage, setIsAuth} from "../slices/userSlice";
 
-export const login = createAsyncThunk<any, User>
+export const login = createAsyncThunk<any, UserType>
 ('/user/login',
     async ({email, password}, {dispatch}) => {
         return axios.post(URl_LOGIN, {email: email, password: password})
@@ -24,6 +24,3 @@ export const login = createAsyncThunk<any, User>
                 // dispatch(setErrorMessage(error.config));
             });
     });
-
-
-

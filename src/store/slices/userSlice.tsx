@@ -1,7 +1,7 @@
-import {createAsyncThunk, createSlice, PayloadAction} from "@reduxjs/toolkit";
+import {createSlice} from "@reduxjs/toolkit";
 import {RootState} from "../store";
 import {registration} from "../service/registration";
-import {User, UserState} from "../../utils/type/types";
+import { UserState} from "../../utils/type/types";
 import {login} from "../service/login";
 import {fetchUsers} from "../service/fetchUser";
 import {jwtDecode} from "jwt-decode";
@@ -78,14 +78,12 @@ export const userSlice = createSlice({
                     // @ts-ignore
                     state.token = Object.values(decoded);
                 }
-
             }).addCase(fetchUsers.fulfilled, (state, action) => {
             state.status = 'finished';
             state.users = action.payload
         });
     },
 });
-
 
 export const {setUserName, setUserEmail, setUserPassword, setIsAuth, createUser, setErrorMessage} = userSlice.actions;
 export const selectOrder = (state: RootState) => state.user;

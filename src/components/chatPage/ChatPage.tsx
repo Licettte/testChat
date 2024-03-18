@@ -7,10 +7,11 @@ import {socket} from "../../core/socket";
 import DatePicker from "../calendar/DatePicker";
 import {Flex} from "../../styles/Flex";
 import {archiveMessages} from "./archiveMessages";
+import {MessageType} from "../../utils";
 
 export const ChatPage = () => {
 
-    const [messages, setMessages] = useState(archiveMessages);
+    const [messages, setMessages] = useState<MessageType[]>(archiveMessages);
     const [status, setStatus] = useState('');
     const [date, setDate] = useState(new Date());
     const [filterName, setFilterName] = useState('');
@@ -33,7 +34,7 @@ export const ChatPage = () => {
                       setMessages={setMessages}/>
                 <Message/>
                 <Flex $margin="80px 0">
-                    <DatePicker value={date} onChange={setDate} setChooseDate={setChooseDate}/>
+                    <DatePicker value={date} setChooseDate={setChooseDate}/>
                 </Flex>
             </Main>
         </ChatFlex>)

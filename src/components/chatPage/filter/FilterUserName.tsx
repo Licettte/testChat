@@ -1,14 +1,15 @@
 import React, {useEffect, useMemo, useState} from 'react';
 import {Flex} from "../../../styles/Flex";
-
 import {useAppSelector} from "../../../store/hooks";
 import {selectToken} from "../../../store/slices/userSlice";
 import {FormRadioBtn, InputRadio, Label} from "./filterUserStyle";
+import {MessageType} from "../../../utils";
+import {FilterUserNamePropsType} from "../../../utils/type/FilterUserNameType";
 
-const FilterUserName = ({messages, setFilterName}) => {
+const FilterUserName = ({messages, setFilterName}:FilterUserNamePropsType) => {
     const token = useAppSelector(selectToken);
     const senderName = token[2];
-    const recipient = messages.filter(element => element.name !== senderName)[0]?.name;
+    const recipient = messages.filter((element:MessageType) => element.name !== senderName)[0]?.name;
     const [value, setValue] = useState(senderName);
     const [recipientName, setRecipientName] = useState("собеседник не выбран");
 
@@ -18,7 +19,7 @@ const FilterUserName = ({messages, setFilterName}) => {
         }
     }, [recipient]);
 
-    function changeValue(event) {
+    function changeValue(event: React.ChangeEvent<HTMLInputElement>) {
         setFilterName(event.target.value);
         setValue(event.target.value);
     }
@@ -35,7 +36,7 @@ const FilterUserName = ({messages, setFilterName}) => {
                     id='opt1'
                     checked={value === senderName}
                     onChange={(e) => changeValue(e)}/>
-                <Label for="opt1">{senderName} </Label>
+                <Label  htmlFor="opt1">{senderName} </Label>
             </FormRadioBtn>
 
             <FormRadioBtn>
@@ -45,7 +46,7 @@ const FilterUserName = ({messages, setFilterName}) => {
                     value={recipientName}
                     checked={value === recipientName}
                     onChange={(e) => changeValue(e)}/>
-                <Label for="opt2"> {recipientName} </Label>
+                <Label  htmlFor="opt2"> {recipientName} </Label>
             </FormRadioBtn>
 
             <FormRadioBtn>
@@ -55,7 +56,7 @@ const FilterUserName = ({messages, setFilterName}) => {
                     value=""
                     checked={value === ""}
                     onChange={(e) => changeValue(e)}/>
-                <Label for="opt3"> сбросить </Label>
+                <Label  htmlFor="opt3"> сбросить </Label>
             </FormRadioBtn>
 
         </Flex>

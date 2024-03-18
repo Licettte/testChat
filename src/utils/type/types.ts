@@ -5,10 +5,6 @@ export type EntryFormType = {
     handleClick: (name: string, email: string, password: string) => void;
 }
 
-export type Children = {
-    children: ReactNode
-}
-
 export type FlexType = {
     $direction?: string,
     $align?: string,
@@ -18,15 +14,11 @@ export type FlexType = {
 }
 
 export type FlexChildren = {
-    children: ReactNode,
-    $direction?: string,
-    $align?: string,
-    $justify?: string,
-    $margin?: string
-    $padding?: string
-}
+        children: ReactNode
+    }
+    & FlexType
 
-export type  User = {
+export type  UserType = {
     auth?: boolean;
     name?: string,
     email: string,
@@ -34,11 +26,12 @@ export type  User = {
     id?: any
 };
 
-export type Message = {
-    id: string,
+export type MessageType = {
     text: string,
     name: string,
-    datetime: string
+    id: string,
+    dateForUser: string,
+    data: string
 };
 
 export type UserState = {
@@ -48,17 +41,17 @@ export type UserState = {
     status: 'idle' | 'loading' | 'finished' | 'error';
     auth: boolean,
     token: string[];
-    users: User[];
-    message:string,
+    users: UserType[];
+    message: string,
     errorMessage: string,
-    usersList: User[];
+    usersList: UserType[];
 }
 
 export type MessageState = {
     id: string,
     text: string,
     message: string,
-    messages: Message[],
+    messages: MessageType[],
     name: string,
     datetime: string
     status: 'idle' | 'loading' | 'finished' | 'error';

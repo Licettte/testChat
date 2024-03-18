@@ -51,28 +51,27 @@ export const Year = styled.button`
     font-size: 25px;
     font-style: normal;
     font-weight: 600;
-
     cursor: pointer;
 `;
 
-export const DayOfWeek = styled.p`
+export const DayOfWeek = styled.p<{ $sel: boolean}>`
     color: #444079;
     font-family: Roboto;
     font-size: 25px;
     font-weight: 600;
-    color: ${(props) => (props.sel ? '#58a191' : '')};
+    color: ${(props) => (props.$sel ? '#58a191' : '')};
 `;
 
-export const Button = styled.button`
+export const Button = styled.button<{ $dayscurrent: boolean, $sel: boolean, $day?: boolean}>`
     cursor: pointer;
     font-size: 25px;
     font-style: normal;
-    font-weight:${(props) => (props.dayscurrent ? '500' : '300')} ;
+    font-weight: ${(props) => (props.$dayscurrent ? '500' : '300')};
     width: 99%;
-    color: ${(props) => (props.dayscurrent ? 'none' : 'rgb(36 94 140 / 44%)')};
-    color: ${(props) => (props.sel ? '#000' : 'none')};
-    background-color: ${(props) => (props.sel ? '#61caba40' : 'none')};
-    color: ${(props) => (props.day ? '#f1afc9' : 'none')};
+    color: ${(props) => (props.$dayscurrent ? 'none' : 'rgb(36 94 140 / 44%)')};
+    color: ${(props) => (props.$sel ? '#000' : 'none')};
+    background-color: ${(props) => (props.$sel ? '#61caba40' : 'none')};
+    color: ${(props) => (props.$day ? '#f1afc9' : 'none')};
 
     &:hover {
         color: rgb(176, 149, 227);

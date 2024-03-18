@@ -148,9 +148,9 @@ import {dayNames, monthNames, monthNames1} from "./calendar";
                     key={day.id}
                     onClick={onChooseDays}
                     value={[day.id, day.day, day.month, day.year, day.date,]}
-                    sel={day.selected ? 'sel' : ''}
-                    day={day.isNowDay && day.isNowDay != day.selected ? 'day' : ''}
-                    dayscurrent={day.daysCurrentMonth ? 'dayscurrent' : ''}
+                    $sel={day.selected ? 'sel' : ''}
+                    $day={day.isNowDay && day.isNowDay != day.selected ? 'day' : ''}
+                    $dayscurrent={day.daysCurrentMonth ? 'dayscurrent' : ''}
                 >
                     {day.day}
                 </Button>))}

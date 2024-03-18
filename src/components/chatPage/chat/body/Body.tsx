@@ -7,12 +7,14 @@ import React, {useEffect, useState} from "react";
 import {BodySender} from "./BodySender";
 import {BodyRecipient} from "./BodyRecipient";
 import {filteredData} from "../../filter/FilterUserDate";
+import {BodyType} from "../../../../utils/type/BodyType";
+import {MessageType} from "../../../../utils";
 
-export const Body = ({messages, status, filterName, chooseDate, setMessages}) => {
+export const Body = ({messages, status, filterName, chooseDate, setMessages}:BodyType) => {
     const token = useAppSelector(selectToken);
     const userName = token[2];
     const [isFilter, setIsFilter] = useState(false);
-    const [messagesFilter, setMessagesFilter] = useState(() => [...messages]);
+    const [messagesFilter, setMessagesFilter] = useState<MessageType[]>(() => [...messages]);
 
     useEffect(() => {
         if(chooseDate.length===1){

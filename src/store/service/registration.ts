@@ -1,10 +1,10 @@
 import {createAsyncThunk} from '@reduxjs/toolkit';
 import axios from "axios";
-import {URL_REGISTRATION, User} from "../../utils";
+import {URL_REGISTRATION, UserType} from "../../utils";
 import {useAppDispatch} from "../hooks";
 import {createUser, setErrorMessage} from "../slices/userSlice";
 
-export const registration = createAsyncThunk<User, User>
+export const registration = createAsyncThunk<UserType, UserType>
 ('user/register',
     async ({email, password, name}, {dispatch}) => {
         return axios.post(URL_REGISTRATION, {email: email, password: password, name: name})

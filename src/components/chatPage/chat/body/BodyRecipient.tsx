@@ -6,7 +6,8 @@ import {
     MessageRecipient,
     NameRecipient,
 } from "./bodyStyle";
-export const BodyRecipient = ({element}) => {
+import {MessageType} from "../../../../utils";
+export const BodyRecipient = ({element}: any) => {
     return (
         <ChatBody $direction='column' key={element.id}>
             <NameRecipient>

@@ -1,9 +1,9 @@
 import {createAsyncThunk} from '@reduxjs/toolkit';
 import axios from "axios";
-import {URL_MESSAGE, Message} from "../../utils";
+import {URL_MESSAGE, MessageType} from "../../utils";
 import {setErrorMessage} from "../slices/userSlice";
 
-export const fetchMessages = createAsyncThunk<Message, Message>
+export const fetchMessages = createAsyncThunk<MessageType, MessageType>
 ('user/getMessages',
     async (_,{dispatch}) => {
         return axios.get(URL_MESSAGE, {
@@ -27,10 +27,10 @@ export const fetchMessages = createAsyncThunk<Message, Message>
     });
 
 
-export const createMessage = createAsyncThunk<Message, Message>
+export const createMessage = createAsyncThunk<MessageType, MessageType>
 ('user/createMessage',
-    async ({text, name, datetime}) => {
-        return axios.post(URL_MESSAGE, {text: text, name: name, datetime: datetime})
+    async ({text, name, data}) => {
+        return axios.post(URL_MESSAGE, {text: text, name: name, datetime: data})
             .then((response) => {
                 console.log(response.data, "data createMessage");
                 return response.data;

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {FONT_BOLD_15, FONT_MEDIUM_15} from "../../../styles/fonts";
+import {FONT_MEDIUM_15} from "../../../styles/fonts";
 
 export const FormRadioBtn = styled.div`
     display: inline-block;

@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
 import {ButtonModal, InputModal, WrapperModal, FormModal} from "./ModaleStyle";
-export const Modal = ({setIsEditText, setIsModalActive}) => {
+import {ModalPropsType} from "../../utils/type/ModalType";
+export const Modal = ({setIsEditText, setIsModalActive}: ModalPropsType) => {
 
     const [text, setText] = useState('');
-    const onSubmit = (e) => {
+    const onSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         setIsEditText(text);
         setIsModalActive(false)

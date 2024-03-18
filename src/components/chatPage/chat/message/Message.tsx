@@ -18,9 +18,7 @@ export const Message = () => {
     const stopTaping = () => {
         socket.emit('stopTyping', '');
     };
-
-    console.log(message , 'message')
-    const handleSend = (e) => {
+    const handleSend = (e: React.FormEvent) => {
       const d = new Date();
         const date = d.setMonth(d.getMonth() - 1);
         e.preventDefault();

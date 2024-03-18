@@ -1,3 +1,5 @@
+import {MessageType} from "../../utils";
+
 export const archiveMessages = [
     {
         text: '🎅🏻☃️🎄',
